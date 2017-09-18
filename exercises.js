@@ -59,6 +59,8 @@ for (var i = 0; i < presidents.length; i++){
 		
 	}
 leaders (presidents);
+//console.log (leaders (presidents));  nope, won't run.  console.log is to run for statements (not for calling a function)
+//presidents (leaders); nope, don't work
 /* 4) Line Number
 Declare a variable named `stringOfNumbers` and assign its value to an empty string. 
 
@@ -180,8 +182,26 @@ console.log (copyValuesArray);
 Declare a variable named `topQuote` and assign it to a String value of your favorite one line quote.
 Write a function that will iterate through the string value and return the longest word in that quote. Console.log your result.
 */
+var topQuote = "Discipline Equals Freedom";   //Had square brackets around quote, to identify an array.
+function longestWord (str){
+	var strToArray = str.split(" "); //converts string to an array (from solutions)
+  	var currentWord = ""; //to store the string (from solutions)
+  	for(var i =0; i<strToArray.length; i++){ //iterate through the string array (from solutions)
+    if(strToArray[i].length > currentWord.length){ //comparing if the word's length is longer than current word (from solutions)
+      currentWord = strToArray[i];        //(from solutions)
+    }										//(from solutions)
+  }											//(from solutions)
+  return currentWord;						//(from solutions)
+}
 
-
+console.log(longestWord(topQuote));			//(from solutions)
+	//for(var i = 0; i < topQuote.length; i++){
+	//console.log (topQuote [i]);
+	//}
+		//console.log (topQuote, [i]);
+		//return longestWord;
+//}
+//longestWord (str)
 
 /* 12) Puppet Master
 Declare a variable named `miscStorage` set it's value to be: `[ [], 'Carrots', 9, 'Beets', {}, {name: "Todd B."}, 'Mush' ]`
