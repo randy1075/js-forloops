@@ -211,6 +211,18 @@ Write a function named `generateArrayOfStrings` which takes a single argument `s
    @return Datatype: Array
 
 */
+var miscStorage = [ [], 'Carrots', 9, 'Beets', {}, {name: 'Todd B.'}, 'Mush'];
+function generateArrayOfStrings (storage){
+	var stringArray = [];
+	for(var i = 0; i<storage.length; i++){               //for(var i = 0; i < )
+    if(typeof storage[i] === typeof ""){ //typeof operator returns a string https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
+      stringArray.push(storage[i]);
+    }
+  }
+  return stringArray;
+}
+
+console.log(generateArrayOfStrings(miscStorage));                 
 
 
 
@@ -219,6 +231,21 @@ Write a function that will capitalize the first letter in each word in the phras
 */
 
 var myWay = "i've lived a life that's full, i've traveled each and every highway. but more, much more than this. i did it my way.";
+function capitalize(str){
+  var word = str.split(" ");
+  //console.log(word);
+  for(var i = 0; i<word.length; i++){
+    //console.log(word[i]);
+    var letter = word[i].split("");
+    //console.log(letter);
+    letter[0] = letter[0].toUpperCase();
+    //console.log(letter);
+    word[i] = letter.join('');
+  }
+  return word.join(" ");
+}
+
+console.log(capitalize(myWay));
 
 
 
@@ -232,4 +259,54 @@ The function will iterate through the `cohort` argument and check each student's
 If the `enrolled` property is set to `true` then change that student's `graduated` property to `true`. Otherwise, if `enrolled` is set to `false` then change `enrolled` to `true` leaving `graduated` alone and unchanged.
 Console.log your result.
 */
+var currentCohort = [
+  {
+    name: 'Doug',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Pat',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Marsha',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Moira',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Ben',
+    graduated: false,
+    enrolled: true
+  },
+  {
+    name: 'Nigel the Giraffe',
+    graduated: false,
+    enrolled: false
+  },
+  {
+    name: 'Brandon the Shark',
+    graduated: false,
+    enrolled: true
+  }
+ ];
+function graduateAndSetNewClass(cohort){
+	for (var i = 0; i < cohort.length; i++){
+		//console.log(cohort[i]);
+  if(cohort[i].enrolled === true){
+    cohort[i].graduated = true;
+  }else{
+    cohort[i].graduated = false;
+  }
+ }
+ return cohort;
+}
+
+console.log(graduateAndSetNewClass(currentCohort));
 
